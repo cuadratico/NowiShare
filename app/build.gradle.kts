@@ -9,10 +9,10 @@ android {
 
     defaultConfig {
         applicationId = "com.cipmess"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 36
-        versionCode = 3
-        versionName = "0.0.3"
+        versionCode = 4
+        versionName = "1.0.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -36,7 +36,7 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.lottie)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

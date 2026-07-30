@@ -13,8 +13,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/border_25"
-        android:backgroundTint="@color/black"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/n_grew"
         >
 
         <com.google.android.material.textfield.TextInputLayout
@@ -40,6 +40,7 @@
                 android:fontFamily="monospace"
                 android:maxLines="1"
                 android:inputType="textPassword"
+                android:textColor="@color/white"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -51,7 +52,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="5dp"
-            app:trackColor="@color/black"
+            app:trackColor="@color/n_grew"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -60,8 +61,8 @@
         android:id="@+id/import_butt"
         android:layout_width="70dp"
         android:layout_height="60dp"
-        android:background="@drawable/border_25"
-        android:backgroundTint="@color/yellow"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/n_grew"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/all"

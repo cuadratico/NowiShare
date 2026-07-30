@@ -1,19 +1,16 @@
 package com.cipmess
 
-import android.annotation.SuppressLint
+import android.util.Log
 import androidx.core.graphics.toColorInt
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import kotlin.math.log2
-
-val mayusculas_l = ('A'..'Z').joinToString("").toList()
-val numeros_l = (0..9).joinToString ("").toList()
-val minusculas_l = ('a'..'z').joinToString("").toList()
-
-val simbolos_l = listOf("@#$|?¿¡!").joinToString("").toList()
-@SuppressLint("ResourceAsColor")
 fun entropy(pass: String, porgress: LinearProgressIndicator){
 
+    val mayusculas_l = ('A'..'Z').joinToString("").toList()
+    val numeros_l = (0..9).joinToString ("").toList()
+    val minusculas_l = ('a'..'z').joinToString("").toList()
 
+    var pesos = charArrayOf()
 
     var simbolos = 0
     var minusculas = 0
@@ -21,6 +18,10 @@ fun entropy(pass: String, porgress: LinearProgressIndicator){
     var numeros = 0
 
     for (valor in pass) {
+
+        if (!pesos.contains(valor)) {
+            pesos = pesos.plus(valor)
+        }
 
         if (minusculas_l.contains(valor)) {
             if (minusculas != 26 ) {minusculas += 26}
@@ -33,16 +34,18 @@ fun entropy(pass: String, porgress: LinearProgressIndicator){
         }
     }
 
-    val final =  pass.length * log2((simbolos + mayusculas + minusculas + numeros).toDouble())
+
+    val final = pass.length * log2(((simbolos + mayusculas + minusculas + numeros) + (pesos.size * 2)).toDouble())
+
+    Log.e("final", final.toString())
+
+    pesos.fill('0')
 
     porgress.progress = final.toInt()
-    if (final in 0.0..40.0) {
-        porgress.setIndicatorColor("#aa4040".toColorInt())
-    }else if (final in 40.0..60.0) {
-        porgress.setIndicatorColor("#c9a23e".toColorInt())
-    }else if (final > 60.0){
-        porgress.setIndicatorColor("#40aa47".toColorInt())
-    }else {
-        porgress.setIndicatorColor("#e3e3e3".toColorInt())
+
+    when (final) {
+        in 0.0..40.0 -> porgress.setIndicatorColor("#aa4040".toColorInt())
+        in 40.0..60.0 -> porgress.setIndicatorColor("#c9a23e".toColorInt())
+        else -> porgress.setIndicatorColor("#40aa47".toColorInt())
     }
 }

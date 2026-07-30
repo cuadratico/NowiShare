@@ -11,8 +11,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/load"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/border_25"
-        android:backgroundTint="@color/black"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/n_grew"
         >
 
         <TextView
@@ -27,20 +27,38 @@
             android:layout_marginStart="10dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
-            android:textSize="17dp"
+            android:textSize="19dp"
             android:fontFamily="monospace"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <ProgressBar
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/load"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:lottie_rawRes="@raw/file_change_anim"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        app:lottie_speed="2"
         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/load"
+        app:layout_constraintEnd_toEndOf="@id/load"
+        app:layout_constraintStart_toStartOf="@id/load"
+        android:layout_marginTop="20dp"
+        android:textSize="18dp"
+        android:fontFamily="@font/pixel"
+        android:textColor="@color/n_blue"
+        android:text="A Nowi Product :)"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,4 +4,8 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="yellow">#758523</color>
+
+    <color name="n_blue">#5898df</color>
+    <color name="n_grew">#353434</color>
+
 </resources>

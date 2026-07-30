@@ -8,8 +8,8 @@
         android:id="@+id/all"
         android:layout_width="300dp"
         android:layout_height="200dp"
-        android:background="@drawable/border_25"
-        android:backgroundTint="@color/black"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/n_grew"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,6 +47,7 @@
                     android:inputType="textPassword"
                     android:textSize="17dp"
                     android:maxLines="1"
+                    android:textColor="@color/white"
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -58,7 +59,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/back_pass"
                 android:layout_marginTop="5dp"
-                app:trackColor="@color/black"
+                app:trackColor="@color/n_grew"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -91,6 +92,7 @@
                     android:gravity="center"
                     android:textSize="17dp"
                     android:maxLines="1"
+                    android:textColor="@color/white"
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,7 +102,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/back_name_f"
                 app:layout_constraintStart_toEndOf="@id/back_name_f"
                 android:layout_marginStart="5dp"
-                android:text=".cm"
+                android:text=".ns"
                 android:fontFamily="monospace"
                 android:textSize="17dp"
                 />
@@ -114,8 +116,8 @@
         android:id="@+id/export_butt"
         android:layout_width="70dp"
         android:layout_height="60dp"
-        android:background="@drawable/border_25"
-        android:backgroundTint="@color/yellow"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/n_grew"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/all"
@@ -132,7 +134,44 @@
             app:layout_constraintStart_toStartOf="parent"
             />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/key_conf"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/n_grew"
+        app:layout_constraintTop_toTopOf="@id/export_butt"
+        app:layout_constraintBottom_toBottomOf="@id/export_butt"
+        app:layout_constraintEnd_toEndOf="@id/all"
+        app:layout_constraintStart_toEndOf="@id/export_butt"
+        >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/key_conf"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/algo_expre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/all"
+        app:layout_constraintEnd_toEndOf="@id/all"
+        app:layout_constraintStart_toStartOf="@id/all"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/pixel"
+        android:textSize="17dp"
+        android:textColor="@color/n_blue"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
