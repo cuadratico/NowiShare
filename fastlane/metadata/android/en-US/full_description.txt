@@ -1,1 +1,1 @@
-An app where you can encrypt messages and export files with that same message to later import the file and decrypt that message.
+Share information in encrypted form via any communication channel
