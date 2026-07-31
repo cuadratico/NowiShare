@@ -48,17 +48,35 @@
         app:lottie_speed="2"
         />
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/load"
         app:layout_constraintEnd_toEndOf="@id/load"
         app:layout_constraintStart_toStartOf="@id/load"
         android:layout_marginTop="20dp"
-        android:textSize="18dp"
-        android:fontFamily="@font/pixel"
-        android:textColor="@color/n_blue"
-        android:text="A Nowi Product :)"
-        />
+        android:background="@drawable/border"
+        android:backgroundTint="@color/n_grew"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/pixel"
+            android:textColor="@color/n_blue"
+            android:text="A Nowi Product :)"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

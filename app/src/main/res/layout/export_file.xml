@@ -160,18 +160,35 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/algo_expre"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/all"
         app:layout_constraintEnd_toEndOf="@id/all"
         app:layout_constraintStart_toStartOf="@id/all"
         android:layout_marginBottom="10dp"
-        android:fontFamily="@font/pixel"
-        android:textSize="17dp"
-        android:textColor="@color/n_blue"
-        />
+        android:background="@drawable/border"
+        android:backgroundTint="@color/n_grew"
+        >
 
+        <TextView
+            android:id="@+id/algo_expre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/pixel"
+            android:textSize="17dp"
+            android:textColor="@color/n_blue"
+            android:text="AES-Encrypted"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

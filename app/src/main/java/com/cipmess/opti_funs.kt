@@ -20,6 +20,7 @@ import javax.crypto.SecretKey
 import javax.crypto.SecretKeyFactory
 import javax.crypto.spec.PBEKeySpec
 import javax.crypto.spec.SecretKeySpec
+import androidx.core.graphics.drawable.toDrawable
 
 
 fun dialog (context: Activity, layout: Int, extra: (dialog: Dialog) -> Unit): Pair<Dialog, View> {
@@ -27,8 +28,8 @@ fun dialog (context: Activity, layout: Int, extra: (dialog: Dialog) -> Unit): Pa
 
     return Pair(Dialog(context).apply {
         setContentView(view)
-        this.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        this.window!!.setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE)
+        window!!.setBackgroundDrawable(Color.TRANSPARENT.toDrawable())
+        window!!.setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE)
         extra(this)
     }, view)
 }

@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
         val view_edit = findViewById<ConstraintLayout>(R.id.edit_view)
         val icon_modi = findViewById<ShapeableImageView>(R.id.icon_info)
-        delete = findViewById<ConstraintLayout>(R.id.delete)
+        delete = findViewById(R.id.delete)
 
         val import = findViewById<ShapeableImageView>(R.id.im)
         val export = findViewById<ShapeableImageView>(R.id.ex)
@@ -180,10 +180,10 @@ class MainActivity : AppCompatActivity() {
             export_button.setOnClickListener {
                 if (input_pass.text.isNotEmpty() && file_name.text.isNotEmpty()) {
                     biometric(this, "Decrypt the file") {
-                        try {
-                            load_dialog = load(this@MainActivity, "Encrypting the file...")
+                        load_dialog = load(this@MainActivity, "Encrypting the file...")
 
-                            lifecycleScope.launch (Dispatchers.IO){
+                        lifecycleScope.launch (Dispatchers.IO){
+                            try {
                                 export(this@MainActivity, pref, input_pass.text.toString(), file_name.text.toString(), if (states == state.edit) { input_text.text.toString() } else { text_read.text.toString() })
 
                                 withContext(Dispatchers.Main) {
@@ -191,13 +191,16 @@ class MainActivity : AppCompatActivity() {
                                     dialog_export.dismiss()
                                     load_dialog.dismiss()
                                 }
-                            }
 
-                        } catch (e: Exception) {
-                            Log.e("Error encrypting the file", e.toString())
-                            input_pass.setText("")
-                            Toast.makeText(this@MainActivity, "Error encrypting the file", Toast.LENGTH_SHORT).show()
+                            } catch (e: Exception) {
+                                Log.e("Error encrypting the file", e.toString())
+                                withContext(Dispatchers.Main) {
+                                    input_pass.setText("")
+                                    Toast.makeText(this@MainActivity, "Error encrypting the file", Toast.LENGTH_SHORT).show()
+                                }
+                            }
                         }
+
                     }
                 }
             }
